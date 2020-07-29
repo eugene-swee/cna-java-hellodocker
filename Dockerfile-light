@@ -1,0 +1,7 @@
+FROM openjdk:11-jdk AS build
+COPY HelloDocker.java .
+RUN javac HelloDocker.java
+
+FROM openjdk:11-jre AS run
+COPY --from=build HelloDocker.class .
+CMD java HelloDocker
