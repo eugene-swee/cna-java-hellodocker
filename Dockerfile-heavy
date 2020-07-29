@@ -1,0 +1,4 @@
+FROM openjdk:11-jdk
+COPY HelloDocker.java .
+RUN javac HelloDocker.java
+CMD java HelloDocker
